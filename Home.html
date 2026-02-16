@@ -19,12 +19,11 @@
     />
 
     <!-- 4. Fixed Bootstrap Icons CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
     <!-- 5. Your Custom Files (Keep these last) -->
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="./app.js"></script>
-    
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -120,9 +119,13 @@
           Button 2
         </button>
         <button type="button" class="btn btn-success round-button">
+          <i class="bi bi-house"></i>
           Button 3
         </button>
         <button type="button" class="btn btn-danger round-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chair" viewBox="0 0 16 16">
+            <path d="M4 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6h1v2H3V7h1V1zm1 1v5h6V2H5zm-2 7v6a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4h6v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V9H3z"/>
+          </svg>
           Button 4
         </button>
       </div>
@@ -207,5 +210,6 @@
     <button class="btn btn-primary btn-lg rounded-pill shadow">
       It Works!
     </button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
