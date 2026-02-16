@@ -19,12 +19,19 @@
     />
 
     <!-- 4. Fixed Bootstrap Icons CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
     <!-- 5. Your Custom Files (Keep these last) -->
     <link rel="stylesheet" href="styles.css" />
     <script defer src="./app.js"></script>
   </head>
+
+
+
+
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container-fluid">
@@ -78,6 +85,11 @@
       Connecting neighbors, trading value: Your local marketplace for everything
       you need.
     </p>
+    <div class="input-group mb-3 d-inline-flex  p-3">
+      
+      <input type="text" class="form-control border-start-0 ps-4 shadow-sm " placeholder="Search local items . . ." aria-label="Search">
+      <button class="btn btn-primary" type="button" id="search-button"><i class="bi bi-search"></i></button>
+    </div>
     <div
       class="category-buttons d-inline-flex gap-2 p-3"
       style="
@@ -123,15 +135,63 @@
           Button 3
         </button>
         <button type="button" class="btn btn-danger round-button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chair" viewBox="0 0 16 16">
-            <path d="M4 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6h1v2H3V7h1V1zm1 1v5h6V2H5zm-2 7v6a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4h6v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V9H3z"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-chair"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M4 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6h1v2H3V7h1V1zm1 1v5h6V2H5zm-2 7v6a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4h6v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V9H3z"
+            />
           </svg>
           Button 4
+        </button>
+        <button type="button" class="btn btn-warning round-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-person-circle"
+            viewBox="0 0 16 16"
+          >
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path
+              fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37c.087-.67.37-1.23.783-1.66C4.042 10.567 5.468 9.5 8 9.5s3
+              .933 4.532 1.543c.413.43.696.99.783 1.66A7 7 0 0 0 8 1z"
+            />
+          </svg>
+          Button 5
+        </button>
+        <button type="button" class="btn btn-info round-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-bicycle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M5 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm8 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM5 4a1 1 0 1 0 0 2 0 1 1 0 0 0 0-2zm8 0a1 1 0 1 0 0
+              2 0 1 1 0 0 0 0-2z"
+            />
+            <path
+              d="M13.5 5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V6.707l-2.147 2.146a.5.5 0 0 1-.707-.707L11.293 6H10v3a.5.5 0 0 1-1 0V6H7v3a.5.5 0 0 1-1
+              0V6H4v2a.5.5 0 0 1-1 0V6.707l-2.147 2.146a.5.5 0 1 1-.707-.707L2.293 6H1a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 .5 4h3a.5.5 0 0 1 .5.5v3h2V4a.5.5
+              0 0 1 .5-.5h3z"
+            />
+          </svg>
+          Button 6
         </button>
       </div>
     </div>
 
-    <!-- TODO: Still need to create a card component using bootstrap-->
+
     <div
       class="d-flex flex-wrap gap-3"
       style="padding: 20px; margin-bottom: 20px"
