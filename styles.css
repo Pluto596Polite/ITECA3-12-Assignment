@@ -34,6 +34,34 @@
     justify-content: space-between;
 }
 
+.explore-page {
+    --explore-nav-height: 96px;
+}
+
+.explore-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1040;
+}
+
+.explore-sidebar {
+    position: fixed;
+    top: var(--explore-nav-height);
+    left: 0;
+    width: 280px;
+    height: calc(100vh - var(--explore-nav-height));
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-right: 1px solid #e2e6ea;
+    overflow-y: auto;
+    z-index: 1030;
+}
+
+.explore-content {
+    margin-left: 280px;
+    padding: 0 1.5rem 2rem;
+}
+
 .card-offset-shadow {
     box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
 
@@ -86,6 +114,14 @@ button:active,
 
     .search-group {
         width: 100%;
+    }
+
+    .explore-sidebar {
+        width: 220px;
+    }
+
+    .explore-content {
+        margin-left: 220px;
     }
 }
 
