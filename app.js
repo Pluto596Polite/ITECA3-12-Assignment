@@ -131,3 +131,19 @@ function createListing() {
   }
 }
 
+
+//the following script will be used to toggle the dropdown menu in the profile icon component
+const profileBtn = document.getElementById('profileBtn');
+const dropdownMenu = document.getElementById('dropdownMenu');
+
+profileBtn.addEventListener('click', (e) => {
+  e.stopPropagation(); // Prevents the window click listener from firing immediately
+  dropdownMenu.classList.toggle('show');
+});
+
+// Close menu when clicking anywhere else
+window.addEventListener('click', () => {
+  if (dropdownMenu.classList.contains('show')) {
+    dropdownMenu.classList.remove('show');
+  }
+});
