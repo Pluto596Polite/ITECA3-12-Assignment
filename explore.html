@@ -53,7 +53,7 @@
               <a class="nav-link" href="Explore.html">Features</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link" href="CreateListing.html">Create a Listing</a>
             </li>
           </ul>
         </div>
@@ -69,45 +69,46 @@
 
 
 <h2>Categories:</h2>
+    <div id="category-filter" class="list-group list-group-flush">
       <!--this is the category component for the sidebar-->
       <div class="list-group list-group-flush">
         <label class="list-group-item d-flex gap-3 align-items-center border-0 py-2 current-pointer">
-          <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.25rem;">
+          <input class="form-check-input flex-shrink-0" type="checkbox" value="Technology" style="font-size: 1.25rem;">
           Technology
         </label>
       </div>
-
+      
       <div class="list-group list-group-flush">
         <label class="list-group-item d-flex gap-3 align-items-center border-0 py-2 current-pointer">
-          <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.25rem;">
+          <input class="form-check-input flex-shrink-0" type="checkbox" value="Clothing" style="font-size: 1.25rem;">
           Clothing
         </label>
       </div>
 
       <div class="list-group list-group-flush">
         <label class="list-group-item d-flex gap-3 align-items-center border-0 py-2 current-pointer">
-          <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.25rem;">
+          <input class="form-check-input flex-shrink-0" type="checkbox" value="Appliances" style="font-size: 1.25rem;">
           Appliances
         </label>
       </div>
 
       <div class="list-group list-group-flush">
         <label class="list-group-item d-flex gap-3 align-items-center border-0 py-2 current-pointer">
-          <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.25rem;">
+          <input class="form-check-input flex-shrink-0" type="checkbox" value="Furniture" style="font-size: 1.25rem;">
           Furniture
         </label>
       </div>
 
       <div class="list-group list-group-flush">
         <label class="list-group-item d-flex gap-3 align-items-center border-0 py-2 current-pointer">
-          <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.25rem;">
+          <input class="form-check-input flex-shrink-0" type="checkbox" value="Cars" style="font-size: 1.25rem;">
           Cars
         </label>
       </div>
-
+      </div>
       
 
-      <button class="btn btn-primary mt-3 mb-3" type="button" id="apply-filters-button">
+      <button class="btn btn-primary mt-3 mb-3" type="button" onclick="applyFilters()" id="apply-filters-button">
         Apply Filters
       </button>
 

@@ -23,6 +23,11 @@
     width: 100%;
 }
 
+.form-label {
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+}
+
 .category-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -100,6 +105,26 @@ button:active,
 .btn:active {
     transform: translateY(2px) scale(0.98);
     box-shadow: none;
+}
+
+.listing-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 96px);
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form-field-group {
+    width: 100%;
+}
+
+.form-field-group .form-control {
+    width: 100%;
 }
 
 @media (max-width: 991.98px) {
