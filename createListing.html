@@ -16,10 +16,27 @@
     <script defer src="./component.js"></script>
     <script defer src="./app.js"></script>
   </head>
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0d6dfd 0%, #0a58ca 100%);
+      padding-top: 96px;
+    }
+
+    .listing-form-container h1 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      color: #0d6dfd;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+  </style>
   <body>
     <navbar-component></navbar-component>
 
-    <div class="listing-form-container">
+    <div class="listing-form-container mb-5 mt-5">
       <h1 class="mb-4">Create a Listing</h1>
 
       <!--this is where the image upload component will go-->

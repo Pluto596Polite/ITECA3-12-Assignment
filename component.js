@@ -37,6 +37,9 @@ class NavbarComponent extends HTMLElement {
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="registerPage.html">Register</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="Home.html">Home</a>
               </li>
