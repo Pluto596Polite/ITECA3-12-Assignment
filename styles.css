@@ -1,3 +1,7 @@
+body {
+    padding-top: 96px;
+}
+
 .round-button{
     border-radius: 10px;
     padding: 10px;
@@ -43,11 +47,7 @@
     --explore-nav-height: 96px;
 }
 
-.explore-navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1040;
-}
+
 
 .explore-sidebar {
     position: fixed;
