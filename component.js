@@ -13,15 +13,20 @@ class NavbarComponent extends HTMLElement {
           display: block;
         }
         nav {
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+          padding: 0.5rem 0;
+        }
+        .navbar-brand {
+          margin-right: auto;
         }
       </style>
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container-fluid">
+        <div class="container-fluid px-2 px-sm-3">
           <img
             src="Assets/NextDoorSALogo.png"
             alt="NextDoorSA logo"
             class="brand-logo"
+            loading="lazy"
           />
           <a class="navbar-brand brand-name" href="Home.html">NextDoorSA</a>
           <button
@@ -44,10 +49,10 @@ class NavbarComponent extends HTMLElement {
                 <a class="nav-link" href="Home.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Explore.html">Explore</a>
+                <a class="nav-link" href="explore.html">Explore</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="CreateListing.html">Create a Listing</a>
+                <a class="nav-link" href="createListing.html">Create a Listing</a>
               </li>
               <li class="nav-item">
                 <profile-icon-component></profile-icon-component>
@@ -81,13 +86,13 @@ class CategoryButtonComponent extends HTMLElement {
           display: inline-block;
         }
         button {
-          border-radius: 10px;
-          padding: 10px;
-          transition: transform 120ms ease, box-shadow 120ms ease;
+          border-radius: 8px;
+          padding: 8px 12px;
+          transition: transform 100ms ease, box-shadow 100ms ease;
+          font-size: 12px;
         }
         button:active {
-          transform: translateY(2px) scale(0.98);
-          box-shadow: none;
+          transform: translateY(1px) scale(0.98);
         }
       </style>
       <button type="button" class="btn ${variant} round-button">

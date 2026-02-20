@@ -1,23 +1,33 @@
-body {
-    padding-top: 96px;
+/* Mobile-first base styles */
+html {
+    scroll-behavior: smooth;
 }
 
-.round-button{
-    border-radius: 10px;
-    padding: 10px;
+body {
+    padding-top: 60px;
+    margin: 0;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
 
+.round-button {
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 12px;
+    flex: 0 1 auto;
 }
 
 .brand-logo {
-    width: 120px;
-    height: 80px;
-    margin-right: 10px;
+    width: 44px;
+    height: 44px;
+    margin-right: 8px;
     object-fit: contain;
 }
 
 .brand-name {
     font-family: Roboto, sans-serif;
-    font-size: 48px;
+    font-size: 20px;
     font-weight: bold;
     color: white;
     line-height: 1;
@@ -29,22 +39,26 @@ body {
 
 .form-label {
     font-family: Roboto, sans-serif;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 13px;
+    margin-bottom: 6px;
 }
 
 .category-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(8px, 2vw, 20px);
-    padding: 16px;
-    border-radius: 20px;
-    background: #eeeef0;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 16px;
+    background: #f0f0f2;
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .explore-page {
-    --explore-nav-height: 96px;
+    --explore-nav-height: 60px;
 }
 
 
@@ -52,30 +66,41 @@ body {
 .explore-sidebar {
     position: fixed;
     top: var(--explore-nav-height);
-    left: 0;
-    width: 280px;
+    left: -100%;
+    width: 240px;
     height: calc(100vh - var(--explore-nav-height));
-    padding: 1.5rem;
+    padding: 1rem;
     background: #f8f9fa;
     border-right: 1px solid #e2e6ea;
     overflow-y: auto;
     z-index: 1030;
+    transition: left 250ms ease;
+}
+
+.explore-sidebar.show {
+    left: 0;
 }
 
 .explore-content {
-    margin-left: 280px;
-    padding: 0 1.5rem 2rem;
+    margin-left: 0;
+    padding: 0 1rem 1.5rem;
 }
 
 .card-offset-shadow {
-    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
+.card-img-top {
+    object-fit: cover;
+    height: 180px;
+    width: 100%;
 }
 
 .navbar-nav .nav-link {
     position: relative;
     display: inline-block;
     padding-bottom: 4px;
+    font-size: 14px;
 }
 
 .navbar-nav .nav-link::after {
@@ -88,7 +113,7 @@ body {
     background: currentColor;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 180ms ease;
+    transition: transform 150ms ease;
 }
 
 .navbar-nav .nav-link:hover::after,
@@ -98,12 +123,13 @@ body {
 
 button,
 .btn {
-    transition: transform 120ms ease, box-shadow 120ms ease;
+    transition: transform 100ms ease, box-shadow 100ms ease;
+    border-radius: 8px;
 }
 
 button:active,
 .btn:active {
-    transform: translateY(2px) scale(0.98);
+    transform: translateY(1px) scale(0.98);
     box-shadow: none;
 }
 
@@ -112,55 +138,108 @@ button:active,
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 96px);
-    padding: 2rem;
-    max-width: 500px;
+    min-height: calc(100vh - 60px);
+    padding: 1rem;
+    max-width: 100%;
     width: 100%;
     margin: 0 auto;
     background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    
 }
 
 .form-field-group {
     width: 100%;
+    margin-bottom: 1rem;
 }
 
 .form-field-group .form-control {
     width: 100%;
+    border-radius: 8px;
 }
 
-@media (max-width: 991.98px) {
-    .brand-name {
-        font-size: 32px;
+/* Desktop-first enhancements */
+@media (min-width: 576px) {
+    body {
+        padding-top: 70px;
     }
 
     .brand-logo {
-        width: 88px;
+        width: 56px;
         height: 56px;
     }
 
-    .search-group {
-        width: 100%;
+    .brand-name {
+        font-size: 28px;
     }
 
-    .explore-sidebar {
-        width: 220px;
+    .round-button {
+        padding: 10px 14px;
+        font-size: 13px;
     }
 
-    .explore-content {
-        margin-left: 220px;
+    .card-img-top {
+        height: 200px;
+    }
+
+    .listing-form-container {
+        min-height: calc(100vh - 70px);
+        padding: 2rem;
+        max-width: 500px;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 }
 
-@media (max-width: 575.98px) {
-    .brand-name {
-        font-size: 24px;
+@media (min-width: 768px) {
+    body {
+        padding-top: 75px;
     }
 
     .brand-logo {
         width: 64px;
-        height: 44px;
+        height: 64px;
+    }
+
+    .brand-name {
+        font-size: 32px;
+    }
+
+    .form-label {
+        font-size: 14px;
+    }
+
+    .card-img-top {
+        height: 220px;
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 80px;
+    }
+
+    .brand-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .brand-name {
+        font-size: 36px;
+    }
+
+    .explore-sidebar {
+        position: fixed;
+        top: var(--explore-nav-height);
+        left: 0;
+        width: 260px;
+        left: 0 !important;
+    }
+
+    .explore-content {
+        margin-left: 260px;
+        padding: 0 1.5rem 2rem;
+    }
+
+    .card-img-top {
+        height: 240px;
     }
 }
