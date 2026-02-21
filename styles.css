@@ -61,20 +61,53 @@ body {
     --explore-nav-height: 60px;
 }
 
+#toggle-sidebar {
+    position: fixed;
+    top: 70px;
+    right: 15px;
+    z-index: 1021;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
 
+@media (min-width: 576px) {
+    .explore-page {
+        --explore-nav-height: 70px;
+    }
+    #toggle-sidebar {
+        top: 80px;
+    }
+}
+
+@media (min-width: 768px) {
+    .explore-page {
+        --explore-nav-height: 75px;
+    }
+    #toggle-sidebar {
+        top: 85px;
+    }
+}
+
+@media (min-width: 992px) {
+    .explore-page {
+        --explore-nav-height: 80px;
+    }
+}
 
 .explore-sidebar {
     position: fixed;
     top: var(--explore-nav-height);
     left: -100%;
-    width: 240px;
+    width: 280px;
+    max-width: 85vw;
     height: calc(100vh - var(--explore-nav-height));
     padding: 1rem;
-    background: #f8f9fa;
+    background: #ffffff;
     border-right: 1px solid #e2e6ea;
     overflow-y: auto;
-    z-index: 1030;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1020;
     transition: left 250ms ease;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .explore-sidebar.show {
@@ -83,7 +116,38 @@ body {
 
 .explore-content {
     margin-left: 0;
-    padding: 0 1rem 1.5rem;
+    padding: 1rem;
+    min-height: calc(100vh - var(--explore-nav-height));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.explore-content h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.explore-content p {
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+.sidebar-backdrop {
+    position: fixed;
+    top: var(--explore-nav-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--explore-nav-height));
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1019;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 250ms ease, visibility 250ms ease;
+}
+
+.sidebar-backdrop.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 .card-offset-shadow {
@@ -230,13 +294,29 @@ button:active,
         position: fixed;
         top: var(--explore-nav-height);
         left: 0;
-        width: 260px;
+        width: 280px;
+        max-width: 280px;
         left: 0 !important;
+        background: #f8f9fa;
+        box-shadow: none;
+        border-right: 1px solid #dee2e6;
     }
 
     .explore-content {
-        margin-left: 260px;
-        padding: 0 1.5rem 2rem;
+        margin-left: 280px;
+        padding: 1.5rem 2rem;
+    }
+
+    .explore-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .explore-content p {
+        font-size: 1rem;
+    }
+
+    .sidebar-backdrop {
+        display: none;
     }
 
     .card-img-top {
