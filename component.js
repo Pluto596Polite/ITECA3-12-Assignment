@@ -28,7 +28,7 @@ class NavbarComponent extends HTMLElement {
             class="brand-logo"
             loading="lazy"
           />
-          <a class="navbar-brand brand-name" href="Home.html">NextDoorSA</a>
+          <a class="navbar-brand brand-name" href="home.html">NextDoorSA</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -46,7 +46,7 @@ class NavbarComponent extends HTMLElement {
                 <a class="nav-link" href="registerPage.html">Register</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Home.html">Home</a>
+                <a class="nav-link" href="home.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="explore.html">Explore</a>
