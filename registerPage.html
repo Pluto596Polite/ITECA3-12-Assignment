@@ -1,232 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register - NextDoorSA</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <style>
-        body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background-color: #f8f9fa;
-        }
-        .registration-container {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
-        .registration-card {
-            width: 100%;
-            max-width: 100%;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem 1rem;
-            animation: slideUp 0.4s ease-out;
-        }
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .registration-header {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        .registration-header h1 {
-            font-size: 20px;
-            color: #0d6efd;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-        .registration-header p {
-            color: #6c757d;
-            font-size: 13px;
-        }
-        .form-group {
-            margin-bottom: 1rem;
-        }
-        .form-label {
-            font-weight: 500;
-            color: #212529;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 13px;
-        }
-        .form-control {
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            padding: 0.6rem 0.75rem;
-            font-size: 13px;
-            transition: all 150ms ease;
-        }
-        .form-control:focus {
-            border-color: #0d6efd;
-            box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.1);
-            outline: none;
-        }
-        .password-toggle {
-            position: absolute;
-            right: 0.75rem;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: #0d6efd;
-            font-size: 1rem;
-            background: none;
-            border: none;
-            padding: 0;
-        }
-        .btn-register {
-            width: 100%;
-            padding: 0.6rem 1rem;
-            background: #0d6efd;
-            border: none;
-            border-radius: 8px;
-            color: white;
-            font-weight: 500;
-            font-size: 13px;
-            transition: all 150ms ease;
-            cursor: pointer;
-            margin-top: 0.5rem;
-        }
-        .btn-register:hover {
-            background: #0a58ca;
-            transform: translateY(-1px);
-        }
-        .btn-register:active {
-            transform: translateY(0);
-        }
-        .login-link {
-            text-align: center;
-            margin-top: 1rem;
-            color: #6c757d;
-            font-size: 12px;
-        }
-        .login-link a {
-            color: #0d6efd;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .login-link a:hover {
-            text-decoration: underline;
-        }
-        @media (min-width: 576px) {
-            .registration-card {
-                max-width: 450px;
-                padding: 2rem 1.5rem;
-            }
-            .registration-header h1 {
-                font-size: 24px;
-            }
-        }
-    </style>
     <script defer src="./component.js"></script>
     <script defer src="./app.js"></script>
-</head>
-<body>
+    <script defer src="./auth.js"></script>
+  </head>
+  <body>
     <navbar-component></navbar-component>
 
     <div class="registration-container">
-        <div class="registration-card">
-            <div class="registration-header">
-                <h1>Create Account</h1>
-                <p>Join NextDoorSA</p>
-            </div>
-
-            <form id="registerForm">
-                <div class="form-group">
-                    <label for="username" class="form-label">
-                        <i class="bi bi-person-fill"></i> Username
-                    </label>
-                    <input type="text" class="form-control" id="username" placeholder="Username" required minlength="3" maxlength="20" />
-                </div>
-
-                <div class="form-group">
-                    <label for="email" class="form-label">
-                        <i class="bi bi-envelope-fill"></i> Email
-                    </label>
-                    <input type="email" class="form-control" id="email" placeholder="Email" required />
-                </div>
-
-                <div class="form-group">
-                    <label for="password" class="form-label">
-                        <i class="bi bi-lock-fill"></i> Password
-                    </label>
-                    <div class="position-relative">
-                        <input type="password" class="form-control" id="password" placeholder="Password" required minlength="8" />
-                        <button type="button" class="password-toggle" id="togglePassword" aria-label="Toggle password">
-                            <i class="bi bi-eye-fill"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="confirmPassword" class="form-label">
-                        <i class="bi bi-lock-fill"></i> Confirm
-                    </label>
-                    <div class="position-relative">
-                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm" required minlength="8" />
-                        <button type="button" class="password-toggle" id="toggleConfirmPassword" aria-label="Toggle password">
-                            <i class="bi bi-eye-fill"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn-register">
-                    <i class="bi bi-check-lg"></i> Create Account
-                </button>
-
-                <div class="login-link">
-                    Have an account? <a href="home.html">Sign in</a>
-                </div>
-            </form>
+      <div class="registration-card">
+        <div class="registration-header">
+          <h1>Create Account</h1>
+          <p>Join NextDoorSA</p>
         </div>
+
+        <form id="registerForm">
+          <div class="register-form-group">
+            <label for="username" class="form-label">
+              <i class="bi bi-person-fill"></i> Username
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="Username"
+              required
+              minlength="3"
+              maxlength="20"
+            />
+          </div>
+
+          <div class="register-form-group">
+            <label for="email" class="form-label">
+              <i class="bi bi-envelope-fill"></i> Email
+            </label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <div class="register-form-group">
+            <label for="password" class="form-label">
+              <i class="bi bi-lock-fill"></i> Password
+            </label>
+            <div class="position-relative">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                required
+                minlength="8"
+              />
+              <button
+                type="button"
+                class="password-toggle"
+                id="togglePassword"
+                aria-label="Toggle password"
+              >
+                <i class="bi bi-eye-fill"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="register-form-group">
+            <label for="confirmPassword" class="form-label">
+              <i class="bi bi-lock-fill"></i> Confirm
+            </label>
+            <div class="position-relative">
+              <input
+                type="password"
+                class="form-control"
+                id="confirmPassword"
+                placeholder="Confirm"
+                required
+                minlength="8"
+              />
+              <button
+                type="button"
+                class="password-toggle"
+                id="toggleConfirmPassword"
+                aria-label="Toggle password"
+              >
+                <i class="bi bi-eye-fill"></i>
+              </button>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn-register"
+            onclick="submitRegistrationForm()"
+          >
+            <i class="bi bi-check-lg"></i> Create Account
+          </button>
+
+          <div class="login-link">
+            Have an account? <a href="login.html">Sign in</a>
+          </div>
+        </form>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const togglePassword = document.getElementById('togglePassword');
-        const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
-        const passwordInput = document.getElementById('password');
-        const confirmPasswordInput = document.getElementById('confirmPassword');
+      const togglePassword = document.getElementById("togglePassword");
+      const toggleConfirmPassword = document.getElementById(
+        "toggleConfirmPassword",
+      );
+      const passwordInput = document.getElementById("password");
+      const confirmPasswordInput = document.getElementById("confirmPassword");
 
-        togglePassword.addEventListener('click', (e) => {
-            e.preventDefault();
-            const isPassword = passwordInput.type === 'password';
-            passwordInput.type = isPassword ? 'text' : 'password';
-            togglePassword.innerHTML = isPassword ? '<i class="bi bi-eye-slash-fill"></i>' : '<i class="bi bi-eye-fill"></i>';
-        });
+      togglePassword.addEventListener("click", (e) => {
+        e.preventDefault();
+        const isPassword = passwordInput.type === "password";
+        passwordInput.type = isPassword ? "text" : "password";
+        togglePassword.innerHTML = isPassword
+          ? '<i class="bi bi-eye-slash-fill"></i>'
+          : '<i class="bi bi-eye-fill"></i>';
+      });
 
-        toggleConfirmPassword.addEventListener('click', (e) => {
-            e.preventDefault();
-            const isPassword = confirmPasswordInput.type === 'password';
-            confirmPasswordInput.type = isPassword ? 'text' : 'password';
-            toggleConfirmPassword.innerHTML = isPassword ? '<i class="bi bi-eye-slash-fill"></i>' : '<i class="bi bi-eye-fill"></i>';
-        });
+      toggleConfirmPassword.addEventListener("click", (e) => {
+        e.preventDefault();
+        const isPassword = confirmPasswordInput.type === "password";
+        confirmPasswordInput.type = isPassword ? "text" : "password";
+        toggleConfirmPassword.innerHTML = isPassword
+          ? '<i class="bi bi-eye-slash-fill"></i>'
+          : '<i class="bi bi-eye-fill"></i>';
+      });
 
-        document.getElementById('registerForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            if (passwordInput.value !== confirmPasswordInput.value) {
-                alert('Passwords do not match!');
-                return;
-            }
-            alert(`Welcome ${document.getElementById('username').value}! Registration successful.`);
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+          if (passwordInput.value !== confirmPasswordInput.value) {
+            alert("Passwords do not match!");
+            return;
+          }
+          alert(
+            `Welcome ${document.getElementById("username").value}! Registration successful.`,
+          );
         });
     </script>
-</body>
+  </body>
 </html>

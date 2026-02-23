@@ -46,6 +46,9 @@ class NavbarComponent extends HTMLElement {
                 <a class="nav-link" href="registerPage.html">Register</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="login.html">Log In</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="home.html">Home</a>
               </li>
               <li class="nav-item">
