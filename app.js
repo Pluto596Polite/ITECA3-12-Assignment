@@ -1,3 +1,12 @@
+import './Components/Navbar.js';
+import './Components/CategoryButton.js';
+import './Components/ProductCard.js';
+import './Components/CategoryCheckbox.js';
+import './Components/FormInput.js';
+import './Components/FormTextarea.js';
+import './Components/FormFileInput.js';
+import './Components/SearchBar.js';
+import './Components/ProfileIcon.js';
 const normalizePathSegment = (value) => {
   if (!value) {
     return "";
@@ -132,18 +141,10 @@ function createListing() {
 }
 
 
-//the following script will be used to toggle the dropdown menu in the profile icon component
-const profileBtn = document.getElementById('profileBtn');
-const dropdownMenu = document.getElementById('dropdownMenu');
+// The profile dropdown logic has been moved to Components/ProfileIcon.js
 
-profileBtn.addEventListener('click', (e) => {
-  e.stopPropagation(); // Prevents the window click listener from firing immediately
-  dropdownMenu.classList.toggle('show');
-});
 
-// Close menu when clicking anywhere else
-window.addEventListener('click', () => {
-  if (dropdownMenu.classList.contains('show')) {
-    dropdownMenu.classList.remove('show');
-  }
-});
+// Make functions identifying as global available to window
+window.applyFilters = applyFilters;
+window.createListing = createListing;
+

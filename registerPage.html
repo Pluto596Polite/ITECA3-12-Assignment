@@ -1,167 +1,178 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Register - NextDoorSA</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+            rel="stylesheet"
     />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
     />
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="./component.js"></script>
-    <script defer src="./app.js"></script>
+    <link rel="stylesheet" href="styles.css"/>
+    <!-- <script defer src="./component.js"></script> -->
+    <script type="module" src="./app.js"></script>
     <script defer src="./auth.js"></script>
-  </head>
-  <body>
-    <navbar-component></navbar-component>
 
-    <div class="registration-container">
-      <div class="registration-card">
+</head>
+<body>
+<app-navbar></app-navbar>
+
+<div class="registration-container">
+    <div class="registration-card">
         <div class="registration-header">
-          <h1>Create Account</h1>
-          <p>Join NextDoorSA</p>
+            <h1>Create Account</h1>
+            <p>Join NextDoorSA</p>
         </div>
 
         <form id="registerForm">
-          <div class="register-form-group">
-            <label for="username" class="form-label">
-              <i class="bi bi-person-fill"></i> Username
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="username"
-              placeholder="Username"
-              required
-              minlength="3"
-              maxlength="20"
-            />
-          </div>
-
-          <div class="register-form-group">
-            <label for="email" class="form-label">
-              <i class="bi bi-envelope-fill"></i> Email
-            </label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              placeholder="Email"
-              required
-            />
-          </div>
-
-          <div class="register-form-group">
-            <label for="password" class="form-label">
-              <i class="bi bi-lock-fill"></i> Password
-            </label>
-            <div class="position-relative">
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                placeholder="Password"
-                required
-                minlength="8"
-              />
-              <button
-                type="button"
-                class="password-toggle"
-                id="togglePassword"
-                aria-label="Toggle password"
-              >
-                <i class="bi bi-eye-fill"></i>
-              </button>
+            <div class="form-group">
+                <label for="username" class="form-label">
+                    <i class="bi bi-person-fill"></i> Username
+                </label>
+                <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        placeholder="Username"
+                        required
+                        minlength="3"
+                        maxlength="20"
+                />
             </div>
-          </div>
 
-          <div class="register-form-group">
-            <label for="confirmPassword" class="form-label">
-              <i class="bi bi-lock-fill"></i> Confirm
-            </label>
-            <div class="position-relative">
-              <input
-                type="password"
-                class="form-control"
-                id="confirmPassword"
-                placeholder="Confirm"
-                required
-                minlength="8"
-              />
-              <button
-                type="button"
-                class="password-toggle"
-                id="toggleConfirmPassword"
-                aria-label="Toggle password"
-              >
-                <i class="bi bi-eye-fill"></i>
-              </button>
+            <div class="form-group">
+                <label for="email" class="form-label">
+                    <i class="bi bi-envelope-fill"></i> Email
+                </label>
+                <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Email"
+                        required
+                />
             </div>
-          </div>
 
-          <button
-            type="submit"
-            class="btn-register"
-            onclick="submitRegistrationForm()"
-          >
-            <i class="bi bi-check-lg"></i> Create Account
-          </button>
+            <div class="form-group">
+                <label for="password" class="form-label">
+                    <i class="bi bi-lock-fill"></i> Password
+                </label>
+                <div class="position-relative">
+                    <input
+                            type="password"
+                            class="form-control"
+                            id="password"
+                            placeholder="Password"
+                            required
+                            minlength="8"
+                    />
+                    <button
+                            type="button"
+                            class="password-toggle"
+                            id="togglePassword"
+                            aria-label="Toggle password"
+                    >
+                        <i class="bi bi-eye-fill"></i>
+                    </button>
+                </div>
+            </div>
 
-          <div class="login-link">
-            Have an account? <a href="login.html">Sign in</a>
-          </div>
+            <div class="form-group">
+                <label for="confirmPassword" class="form-label">
+                    <i class="bi bi-lock-fill"></i> Confirm
+                </label>
+                <div class="position-relative">
+                    <input
+                            type="password"
+                            class="form-control"
+                            id="confirmPassword"
+                            placeholder="Confirm"
+                            required
+                            minlength="8"
+                    />
+                    <button
+                            type="button"
+                            class="password-toggle"
+                            id="toggleConfirmPassword"
+                            aria-label="Toggle password"
+                    >
+
+                        <i class="bi bi-eye-fill"></i>
+                    </button>
+                </div>
+            </div>
+
+            <button
+                    type="submit"
+                    class="btn-register"
+
+            >
+                <i class="bi bi-check-lg"></i> Create Account
+            </button>
+
+            <div class="login-link">
+                Have an account? <a href="login.html">Sign in</a>
+            </div>
         </form>
-      </div>
     </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      const togglePassword = document.getElementById("togglePassword");
-      const toggleConfirmPassword = document.getElementById(
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const togglePassword = document.getElementById("togglePassword");
+    const toggleConfirmPassword = document.getElementById(
         "toggleConfirmPassword",
-      );
-      const passwordInput = document.getElementById("password");
-      const confirmPasswordInput = document.getElementById("confirmPassword");
+    );
+    const passwordInput = document.getElementById("password");
+    const confirmPasswordInput = document.getElementById("confirmPassword");
 
-      togglePassword.addEventListener("click", (e) => {
+    togglePassword.addEventListener("click", (e) => {
         e.preventDefault();
         const isPassword = passwordInput.type === "password";
         passwordInput.type = isPassword ? "text" : "password";
         togglePassword.innerHTML = isPassword
-          ? '<i class="bi bi-eye-slash-fill"></i>'
-          : '<i class="bi bi-eye-fill"></i>';
-      });
+            ? '<i class="bi bi-eye-slash-fill"></i>'
+            : '<i class="bi bi-eye-fill"></i>';
+    });
 
-      toggleConfirmPassword.addEventListener("click", (e) => {
+    toggleConfirmPassword.addEventListener("click", (e) => {
         e.preventDefault();
         const isPassword = confirmPasswordInput.type === "password";
         confirmPasswordInput.type = isPassword ? "text" : "password";
         toggleConfirmPassword.innerHTML = isPassword
-          ? '<i class="bi bi-eye-slash-fill"></i>'
-          : '<i class="bi bi-eye-fill"></i>';
-      });
+            ? '<i class="bi bi-eye-slash-fill"></i>'
+            : '<i class="bi bi-eye-fill"></i>';
+    });
 
-      document
+    document
         .getElementById("registerForm")
         .addEventListener("submit", (e) => {
-          e.preventDefault();
-          if (passwordInput.value !== confirmPasswordInput.value) {
-            alert("Passwords do not match!");
-            return;
-          }
-          alert(
-            `Welcome ${document.getElementById("username").value}! Registration successful.`,
-          );
+            e.preventDefault();
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                alert("Passwords do not match!");
+                return;
+            }
+            alert(
+                `Welcome ${document.getElementById("username").value}! Registration successful.`,
+            );
+
+            //#TODO: the following needs to be updated for when the database logic is written so that the user is submitted to the database (input validation so that the user isn't able to gain access if the passwords don't match etc.)
+            window.location.replace("home.html");
         });
-    </script>
-  </body>
+
+
+    //#TODO: create a function so that the password reveal buttons work as intended
+
+
+    //#TODO:
+</script>
+</body>
 </html>
