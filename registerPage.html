@@ -170,9 +170,48 @@
 
 
     //#TODO: create a function so that the password reveal buttons work as intended
+    function togglePasswordVisibility() {
+        const passwordInputButton = document.querySelector(togglePassword);
+        const confirmPasswordInputButton = document.querySelector(toggleConfirmPassword)
+        const passwordValue = passwordInput;
+        const confirmPasswordValue = confirmPasswordInput;
+
+        //the following will describe the behaviour for the toggle password buttons
+        try {
+            const isPassword = passwordValue.type === 'password';
+            const isConfirmPassword = confirmPasswordValue === 'password';
+            passwordValue.type = isPassword ? 'text' : 'password';
+            confirmPasswordValue.type = isConfirmPassword ? 'text' : 'password';
+
+            alert("The input type is currently:  ${passwordValue.type}");
 
 
-    //#TODO:
+                passwordInputButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    passwordValue.type = passwordValue.type === 'text' ? 'password' : 'text';// the 'password' : 'text' is a shorter way of writing an else statement
+                })
+                confirmPasswordInputButton.addEventListener('click', function(event) {
+                    event.preventDefault(); //this is included to prevent JavaScript from resubmitting the form when the button is clicked and instead perform the defined function
+                    confirmPasswordValue.type = confirmPasswordValue.type === 'text' ? 'password' : 'text';
+                });
+
+
+
+
+        }catch (error){
+            alert("The togglePasswordButton didn't work: " + error );
+        }
+
+    }
+
+    //#TODO: Write a function that reads the values from the input fields and creates a user object that is stored in the database
+    function registerUser() {
+        //the following function will read the values from the input fields above to create a user object that will be stored in the database
+
+    }
+
+
+    //#TODO: the following function will be used to call the php file containing the create user object MySQL query and create a User object
 </script>
 </body>
 </html>

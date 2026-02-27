@@ -66,9 +66,9 @@ function applyFilters() {
       (cb) => cb.value,
     );
 
-    if (selectedCategories.length == 0) {
+    if (selectedCategories.length === 0) {
       alert("Please select at least one category to filter by.");
-      return;
+
     } else if (selectedCategories.length > 0) {
       alert("Filters applied: " + selectedCategories.join(", "));
     }
