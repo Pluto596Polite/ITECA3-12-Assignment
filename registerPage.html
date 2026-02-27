@@ -80,7 +80,7 @@
                             id="togglePassword"
                             aria-label="Toggle password"
                     >
-                        <i class="bi bi-eye-fill"></i>
+                        <i class="bi bi-eye-slash-fill"></i>
                     </button>
                 </div>
             </div>
@@ -105,7 +105,7 @@
                             aria-label="Toggle password"
                     >
 
-                        <i class="bi bi-eye-fill"></i>
+                        <i class="bi bi-eye-slash-fill"></i>
                     </button>
                 </div>
             </div>
@@ -128,29 +128,41 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     const togglePassword = document.getElementById("togglePassword");
-    const toggleConfirmPassword = document.getElementById(
-        "toggleConfirmPassword",
-    );
+    const toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
     const passwordInput = document.getElementById("password");
     const confirmPasswordInput = document.getElementById("confirmPassword");
 
-    togglePassword.addEventListener("click", (e) => {
-        e.preventDefault();
-        const isPassword = passwordInput.type === "password";
-        passwordInput.type = isPassword ? "text" : "password";
-        togglePassword.innerHTML = isPassword
-            ? '<i class="bi bi-eye-slash-fill"></i>'
-            : '<i class="bi bi-eye-fill"></i>';
-    });
+    // Refactored Helper Function
+    function setupPasswordToggle(toggleElement, input) {
+        toggleElement.addEventListener("click", (e) => {
+            e.preventDefault();
 
-    toggleConfirmPassword.addEventListener("click", (e) => {
-        e.preventDefault();
-        const isPassword = confirmPasswordInput.type === "password";
-        confirmPasswordInput.type = isPassword ? "text" : "password";
-        toggleConfirmPassword.innerHTML = isPassword
-            ? '<i class="bi bi-eye-slash-fill"></i>'
-            : '<i class="bi bi-eye-fill"></i>';
-    });
+            // 1. Toggle the input type
+            const isPassword = input.type === "password";
+            input.type = isPassword ? "text" : "password";
+
+            // 2. Find the icon.
+            // If toggleElement is a <button>, it finds the <i> inside it.
+            // If toggleElement IS the <i> tag itself, it just uses that.
+            const icon = toggleElement.tagName === 'I' ? toggleElement : toggleElement.querySelector('i');
+
+            // 3. Safely swap the Bootstrap classes
+            if (isPassword) {
+                // Changing to text (visible)
+                icon.classList.remove("bi-eye-slash-fill");
+                icon.classList.add("bi-eye-fill");
+            } else {
+                // Changing to password (hidden)
+                icon.classList.remove("bi-eye-fill");
+                icon.classList.add("bi-eye-slash-fill");
+            }
+        });
+    }
+
+    // Initialize
+    setupPasswordToggle(togglePassword, passwordInput);
+    setupPasswordToggle(toggleConfirmPassword, confirmPasswordInput);
+
 
     document
         .getElementById("registerForm")
@@ -166,43 +178,12 @@
 
             //#TODO: the following needs to be updated for when the database logic is written so that the user is submitted to the database (input validation so that the user isn't able to gain access if the passwords don't match etc.)
             window.location.replace("home.html");
+
+
         });
 
 
-    //#TODO: create a function so that the password reveal buttons work as intended
-    function togglePasswordVisibility() {
-        const passwordInputButton = document.querySelector(togglePassword);
-        const confirmPasswordInputButton = document.querySelector(toggleConfirmPassword)
-        const passwordValue = passwordInput;
-        const confirmPasswordValue = confirmPasswordInput;
 
-        //the following will describe the behaviour for the toggle password buttons
-        try {
-            const isPassword = passwordValue.type === 'password';
-            const isConfirmPassword = confirmPasswordValue === 'password';
-            passwordValue.type = isPassword ? 'text' : 'password';
-            confirmPasswordValue.type = isConfirmPassword ? 'text' : 'password';
-
-            alert("The input type is currently:  ${passwordValue.type}");
-
-
-                passwordInputButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    passwordValue.type = passwordValue.type === 'text' ? 'password' : 'text';// the 'password' : 'text' is a shorter way of writing an else statement
-                })
-                confirmPasswordInputButton.addEventListener('click', function(event) {
-                    event.preventDefault(); //this is included to prevent JavaScript from resubmitting the form when the button is clicked and instead perform the defined function
-                    confirmPasswordValue.type = confirmPasswordValue.type === 'text' ? 'password' : 'text';
-                });
-
-
-
-
-        }catch (error){
-            alert("The togglePasswordButton didn't work: " + error );
-        }
-
-    }
 
     //#TODO: Write a function that reads the values from the input fields and creates a user object that is stored in the database
     function registerUser() {
