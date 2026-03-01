@@ -88,57 +88,7 @@ const listingObject = {
   price: 0
 }
 
-//TO DO: read how the logic below is implemented
-//the following function will be used on the create listing page to create a listing
-function createListing() {
-  try {
-    // Get values from input fields using their IDs
-    const title = document.getElementById("titleInput").value.trim();
-    const description = document.getElementById("descriptionInput").value.trim();
-    const price = document.getElementById("priceInput").value.trim();
-    const fileInput = document.getElementById("formFile").files[0];
 
-    // Validation
-    if (!title) {
-      alert("Please enter a title");
-      return;
-    }
-    if (!description) {
-      alert("Please enter a description");
-      return;
-    }
-    if (!price) {
-      alert("Please enter a price");
-      return;
-    }
-    if (!fileInput) {
-      alert("Please upload an image");
-      return;
-    }
-
-    // Create listing object with the values
-    const newListing = {
-      id: Date.now().toString(), // Generate unique ID
-      image: fileInput.name,
-      title: title,
-      description: description,
-      price: parseFloat(price)
-    };
-
-    // Log the listing to console or send to server
-    console.log("Listing created:", newListing);
-    alert("Listing created successfully!");
-
-    // Optional: Clear form after submission
-    document.getElementById("titleInput").value = "";
-    document.getElementById("descriptionInput").value = "";
-    document.getElementById("priceInput").value = "";
-    document.getElementById("formFile").value = "";
-
-  } catch (error) {
-    alert("An error occurred while creating the listing: " + error.message);
-  }
-}
 
 
 // The profile dropdown logic has been moved to Components/ProfileIcon.js
@@ -146,5 +96,5 @@ function createListing() {
 
 // Make functions identifying as global available to window
 window.applyFilters = applyFilters;
-window.createListing = createListing;
+window.createListing = listingObject;
 
