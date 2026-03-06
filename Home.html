@@ -40,184 +40,182 @@
 
   <app-navbar></app-navbar>
 
-    <main class="container-fluid py-2 py-sm-3 py-md-4">
-      <h1 class="mb-3 mb-sm-4">Welcome to NextDoorSA</h1>
-
-      <div class="input-group search-group mb-3 mb-sm-4">
+    <section class="hero-section">
+      <h1 class="hero-title">Welcome to NextDoorSA</h1>
+      <p class="hero-subtitle">Find amazing deals right in your neighbourhood.</p>
+      <div class="input-group hero-search">
         <input
-          type="text"
-          class="form-control border-start-0 ps-3"
-          placeholder="Search local items . . ."
-          aria-label="Search"
+                type="text"
+                class="form-control"
+                placeholder="Search for items, brands, or categories..."
+                aria-label="Search"
         />
         <button class="btn btn-primary" type="button" id="search-button">
-          <i class="bi bi-search"></i>
+          <i class="bi bi-search"></i> Search
         </button>
       </div>
+    </section>
 
-      <div class="category-buttons mb-3 mb-sm-4">
-        <button type="button" class="btn btn-primary round-button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-tree"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507"
-            />
-          </svg>
-          Outdoors
-        </button>
-        <button type="button" class="btn btn-primary round-button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-pc-display"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M8 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1zm1 13.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0m2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0M9.5 1a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM9 3.5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1h-5a.5.5 0 0 0-.5.5M1.5 2A1.5 1.5 0 0 0 0 3.5v7A1.5 1.5 0 0 0 1.5 12H6v2h-.5a.5.5 0 0 0 0 1H7v-4H1.5a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5H7V2z"
-            />
-          </svg>
-          Electronics
-        </button>
-        <button type="button" class="btn btn-primary round-button">
-          <i class="bi bi-house"></i>
-          Home & Living
-        </button>
-        <button type="button" class="btn btn-primary round-button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-chair"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M4 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6h1v2H3V7h1V1zm1 1v5h6V2H5zm-2 7v6a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4h6v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V9H3z"
-            />
-          </svg>
-          Furniture
-        </button>
-        <button type="button" class="btn btn-primary round-button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-person-circle"
-            viewBox="0 0 16 16"
-          >
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-            <path
-              fill-rule="evenodd"
-              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37c.087-.67.37-1.23.783-1.66C4.042 10.567 5.468 9.5 8 9.5s3
-              .933 4.532 1.543c.413.43.696.99.783 1.66A7 7 0 0 0 8 1z"
-            />
-          </svg>
-          Services
-        </button>
-        <button type="button" class="btn btn-primary round-button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-bicycle"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M5 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm8 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM5 4a1 1 0 1 0 0 2 0 1 1 0 0 0 0-2zm8 0a1 1 0 1 0 0
-              2 0 1 1 0 0 0 0-2z"
-            />
-            <path
-              d="M13.5 5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V6.707l-2.147 2.146a.5.5 0 0 1-.707-.707L11.293 6H10v3a.5.5 0 0 1-1 0V6H7v3a.5.5 0 0 1-1
-              0V6H4v2a.5.5 0 0 1-1 0V6.707l-2.147 2.146a.5.5 0 1 1-.707-.707L2.293 6H1a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 .5 4h3a.5.5 0 0 1 .5.5v3h2V4a.5.5
-              0 0 1 .5-.5h3z"
-            />
-          </svg>
-          Sports & Bikes
-        </button>
+    <main class="container pb-5">
+      <!-- Categories Section -->
+      <div class="section-header">
+        <h2 class="section-title">Shop by Category</h2>
+        <a href="explore.html" class="section-link">View All</a>
       </div>
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 mb-4">
-        <div class="col">
-          <div class="card card-offset-shadow h-100 border-0">
-            <img
-              src="Assets/keyboard.jpeg"
-              class="card-img-top"
-              alt="Technology item"
-              loading="lazy"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Technology</h5>
-              <p class="card-text">Brief description of the item.</p>
-              <a href="#" class="btn btn-primary btn-sm">View Details</a>
-            </div>
+      <div class="category-scroll-container mb-5">
+        <div class="category-card" onclick="outdoorCategoryButton()">
+          <div class="category-icon">
+            <i class="bi bi-tree"></i>
           </div>
+          <span class="category-name">Outdoors</span>
         </div>
-
-        <div class="col">
-          <div class="card card-offset-shadow h-100 border-0">
-            <img
-              src="Assets/men's shirt.jpeg"
-              class="card-img-top"
-              alt="Clothing item"
-              loading="lazy"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Clothing</h5>
-              <p class="card-text">Brief description of the item.</p>
-              <a href="#" class="btn btn-primary btn-sm">View Details</a>
-            </div>
+        <div class="category-card" onclick="electronicsCategoryButton()">
+          <div class="category-icon">
+            <i class="bi bi-pc-display"></i>
           </div>
+          <span class="category-name">Electronics</span>
         </div>
-
-        <div class="col">
-          <div class="card card-offset-shadow h-100 border-0">
-            <img
-              src="Assets/appliance.jpeg"
-              class="card-img-top"
-              alt="Appliance item"
-              loading="lazy"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Appliances</h5>
-              <p class="card-text">Brief description of the item.</p>
-              <a href="#" class="btn btn-primary btn-sm">View Details</a>
-            </div>
+        <div class="category-card" onclick="homeCategoryButton()">
+          <div class="category-icon">
+            <i class="bi bi-house"></i>
           </div>
+          <span class="category-name">Home</span>
         </div>
-
-        <div class="col">
-          <div class="card card-offset-shadow h-100 border-0">
-            <img
-              src="Assets/furniture.jpeg"
-              class="card-img-top"
-              alt="Furniture item"
-              loading="lazy"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Furniture</h5>
-              <p class="card-text">Brief description of the item.</p>
-              <a href="#" class="btn btn-primary btn-sm">View Details</a>
-            </div>
+        <div class="category-card" onclick="furnitureCategoryButton()">
+          <div class="category-icon">
+            <img src="Assets/blueCouch.svg" alt="furniture" width="24" height="24" />
           </div>
+          <span class="category-name">Furniture</span>
+        </div>
+        <div class="category-card" onclick="servicesCategoryButton()">
+          <div class="category-icon">
+            <i class="bi bi-person-circle"></i>
+          </div>
+          <span class="category-name">Services</span>
+        </div>
+        <div class="category-card" onclick="sportsCategoryButton()">
+          <div class="category-icon">
+            <i class="bi bi-bicycle"></i>
+          </div>
+          <span class="category-name">Sports</span>
         </div>
       </div>
 
+      <!-- Featured Items Section -->
+      <div class="section-header">
+        <h2 class="section-title">Trending in Your Area</h2>
+        <a href="explore.html" class="section-link">View More</a>
+      </div>
 
-
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        <div class="col">
+          <product-card
+                  title="Mechanical Keyboard"
+                  image="Assets/keyboard.jpeg"
+                  description="High quality mechanical keyboard with RGB backlighting."
+                  price="1200"
+                  link="#"
+          ></product-card>
+        </div>
+        <div class="col">
+          <product-card
+                  title="Men's Shirt"
+                  image="Assets/men's shirt.jpeg"
+                  description="Cotton men's shirt, size L. Barely worn."
+                  price="1200"
+                  link="#"
+          ></product-card>
+        </div>
+        <div class="col">
+          <product-card
+                  title="Kitchen Blender"
+                  image="Assets/appliance.jpeg"
+                  description="Powerful kitchen blender, perfect for smoothies."
+                  price="1200"
+                  link="#"
+          ></product-card>
+        </div>
+        <div class="col">
+          <product-card
+                  title="Living Room Sofa"
+                  image="Assets/furniture.jpeg"
+                  description="Comfortable 3-seater sofa. Grey upholstery."
+                  price="1200"
+                  link="#"
+          ></product-card>
+        </div>
+      </div>
 
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-      
+    <!-- Product Details Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img id="modalImage" src="" class="img-fluid mb-3 rounded" alt="Product Image" style="width: 100%; max-height: 300px; object-fit: cover;">
+            <h4 id="modalTitle" class="mb-2"></h4>
+            <h5 id="modalPrice" class="text-primary fw-bold mb-3"></h5>
+            <p id="modalDescription" class="text-muted"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a href="#" id="modalLink" class="btn btn-primary">View Full Listing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Event listener for the custom 'view-details' event from product-card components
+      document.addEventListener('view-details', (e) => {
+        const { title, image, description, link, price } = e.detail;
+
+        // Populate modal with product details
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalPrice').textContent = "R " + price;
+        document.getElementById('modalImage').src = image;
+        document.getElementById('modalImage').alt = title;
+        document.getElementById('modalDescription').textContent = description;
+        document.getElementById('modalLink').href = link;
+
+        // Show the modal using Bootstrap API
+        const productModal = new bootstrap.Modal(document.getElementById('productModal'));
+        productModal.show();
+      });
+
+      const homeCategoryButton = () => {
+        //this is the function that will be triggered when the category buttons on the home page is pressed
+        alert("The home category button is clicked!")
+      }
+
+
+      const outdoorCategoryButton = () => {
+        alert("The outdoor category button has been clicked!")
+      }
+
+      const electronicsCategoryButton = () => {
+        alert("The electron category button has been clicked!")
+      }
+
+      const servicesCategoryButton = () => {
+        alert("The services button has been clicked!")
+      }
+
+      const sportsCategoryButton = () => {
+        alert("The sport category button has been clicked!")
+      }
+
+      const furnitureCategoryButton = () => {
+        alert("The furniture category button has been clicked!")
+      }
+    </script>
+
   </body>
 </html>
