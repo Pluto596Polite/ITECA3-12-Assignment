@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Listings - NextDoorSA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script type="module" src="./app.js"></script>
+    <style>
+        .page-header {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #no-listings-message {
+            text-align: center;
+            padding: 4rem 1rem;
+            color: #6c757d;
+        }
+        #no-listings-message i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+    </style>
+  </head>
+  <body>
+    <app-navbar></app-navbar>
+
+    <div class="container mt-5">
+      <div class="page-header">
+        <div>
+            <h1>My Listings</h1>
+            <p class="text-muted">Manage the items you are selling.</p>
+        </div>
+        <a href="createListing.html" class="btn btn-primary">
+          <i class="bi bi-plus-lg"></i> Create New Listing
+        </a>
+      </div>
+
+      <!-- Container for listings -->
+      <div id="my-listings-container" class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+        <!-- Listings will be injected here -->
+      </div>
+
+      <div id="no-listings-message" class="d-none">
+        <i class="bi bi-box-seam"></i>
+        <h3>No listings found</h3>
+        <p>You haven't created any listings yet.</p>
+        <a href="createListing.html" class="btn btn-outline-primary mt-2">Start Selling</a>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('my-listings-container');
+        const emptyMessage = document.getElementById('no-listings-message');
+
+        // Load listings from localStorage
+        let listings = [];
+        try {
+            listings = JSON.parse(localStorage.getItem('listings')) || [];
+        } catch (e) {
+            console.error("Error parsing listings:", e);
+            listings = [];
+        }
+
+        if (listings.length === 0) {
+          emptyMessage.classList.remove('d-none');
+        } else {
+          // Hide empty message
+          emptyMessage.classList.add('d-none');
+
+          listings.forEach(listing => {
+            // Create column wrapper for grid
+            const col = document.createElement('div');
+            col.className = 'col';
+
+            // Create product-card component
+            const card = document.createElement('product-card');
+
+            // Determine values (handling both object structures if needed)
+            const title = listing.title || listing.listingTitle || 'Untitled';
+            const desc = listing.description || listing.listingDescription || '';
+            const price = listing.price || listing.listingPrice || '0.00';
+            let image = listing.image || listing.listingImage || 'Assets/furniture.jpeg';
+
+            // Normalize image path if needed
+            if (!image.includes('/') && !image.startsWith('http')) {
+                image = 'Assets/' + image;
+            }
+
+            // Set attributes for the component
+            card.setAttribute('title', title);
+            card.setAttribute('description', desc);
+            card.setAttribute('price', price);
+            card.setAttribute('image', image);
+
+            // Append to column, then container
+            col.appendChild(card);
+            container.appendChild(col);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
+

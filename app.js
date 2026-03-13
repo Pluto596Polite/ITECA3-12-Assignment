@@ -1,6 +1,6 @@
 import './Components/Navbar.js';
 import './Components/CategoryButton.js';
-import './Components/ProductCard.js';
+import {ProductCardComponent} from './Components/ProductCard.js';
 import './Components/CategoryCheckbox.js';
 import './Components/FormInput.js';
 import './Components/FormTextarea.js';
@@ -78,15 +78,6 @@ function applyFilters() {
 }
 
 
-//the following will be used to create an object for a listing
-const listingObject = {
-  id: "",
-  image: "",
-  title: "",
-  description: "",
-  tag: "",
-  price: 0
-}
 
 
 

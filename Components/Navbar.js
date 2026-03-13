@@ -1,3 +1,5 @@
+
+
 export class NavbarComponent extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -18,7 +20,7 @@ export class NavbarComponent extends HTMLElement {
         }
       </style>
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container-fluid px-2 px-sm-3">
+        <div class="container-sm px-2 px-sm-3">
           <img
             src="Assets/NextDoorSALogo.png"
             alt="NextDoorSA logo"

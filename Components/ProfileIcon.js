@@ -86,6 +86,7 @@ export class ProfileIconComponent extends HTMLElement {
             <a href="login.html">Log In</a>
           <hr>
            <a href="NextDoorSAAdmin.html">Admin</a>
+           <a href="myListings.html">My Listings</a>
            <a href="">Log Out</a>
         </div>
       </div>
@@ -106,7 +107,7 @@ export class ProfileIconComponent extends HTMLElement {
         });
 
 
-        //the following will be used to handle the log out click
+        //the following will be used to handle the log-out click
         logoutLink.addEventListener('click', (e) => {
             e.preventDefault(); //this is used to prevent the program from simply going to the hyperlink and instead perfrom a function
             this.handleLogout();
