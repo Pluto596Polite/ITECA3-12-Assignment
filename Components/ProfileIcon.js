@@ -85,7 +85,7 @@ export class ProfileIconComponent extends HTMLElement {
            <a href="registerPage.html">Register</a>
             <a href="login.html">Log In</a>
           <hr>
-           <a href="NextDoorSAAdmin.html">Admin</a>
+           <a href="admin.html">Admin</a>
            <a href="myListings.html">My Listings</a>
            <a href="">Log Out</a>
         </div>

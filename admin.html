@@ -1,18 +1,68 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Admin Page - NextDoorSA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="styles.css"/>
     <script type="module" src="./app.js"></script>
+
 </head>
 <body>
+ <app-navbar></app-navbar>
 
-<h1>Something very important regarding the admin site will go here</h1>
+<div class="container">
+    <h1 class="sticky-header ">Something very important regarding the admin site will go here</h1>
 
-<p>This is something that will host the main container of the admin site</p>
-<app-navbar></app-navbar>
+    <p>This is something that will host the main container of the admin site</p>
+
+
+</div>
+
+ <div class="container mt-5">
+     <table class="table table-hover">
+         <tr>
+             <th>Username</th>
+             <th>Email</th>
+             <th>Role</th>
+
+         </tr>
+         <tr>
+             <td>EDUV4848989</td>
+             <td>EDUV4848989@vossie.net</td>
+             <td>Student</td>
+         </tr>
+         <tr>
+             <td>EDUV4982938</td>
+             <td>EDUV4982938@vossie.net</td>
+             <td>Student</td>
+         </tr>
+         <tr>
+             <td>EDUV4848989</td>
+             <td>EDUV4848989@vossie.net</td>
+             <td>Student</td>
+         </tr>
+        <tr>
+            <td>EDUV4982938</td>
+            <td>EDUV4982938@vossie.net</td>
+            <td>Student</td>
+        </tr>
+     </table>
+ </div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="listingObject.js"></script>
 </body>
 </html>
